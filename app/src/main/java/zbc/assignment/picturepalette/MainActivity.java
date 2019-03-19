@@ -17,11 +17,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        pictureactivity = new pictureactivity();
     }
 
-    public void onTakePictureClick(View view){
-        dispatchTakePictureIntent();
-    }
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 
@@ -41,8 +39,12 @@ public class MainActivity extends AppCompatActivity {
             imageBitmap.compress(Bitmap.CompressFormat.PNG,100,stream);
             byte[] bytearray = stream.toByteArray();
             Intent in1 = new Intent(this,pictureactivity.class);
-            in1.putExtra("image",imageBitmap);
+            in1.putExtra("image",bytearray);
             startActivity(in1);
         }
+    }
+
+    public void onTakePictureClick(View view) {
+        dispatchTakePictureIntent();
     }
 }
