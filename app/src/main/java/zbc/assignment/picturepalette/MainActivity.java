@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
             ByteArrayOutputStream stream = new ByteArrayOutputStream();
             imageBitmap.compress(Bitmap.CompressFormat.PNG,100,stream);
             byte[] bytearray = stream.toByteArray();
+
             Intent in1 = new Intent(this,pictureactivity.class);
             in1.putExtra("image",bytearray);
             startActivity(in1);

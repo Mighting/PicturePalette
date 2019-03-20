@@ -1,16 +1,35 @@
 package zbc.assignment.picturepalette;
 
 import android.graphics.Bitmap;
-import android.graphics.Color;
+
+import java.util.HashMap;
 
 public class FindPixels {
 
-    int findPixels(Bitmap bitmap){
-        int pixel = bitmap.getPixel(bitmap.getWidth() - 1,bitmap.getHeight() - 1);
-        int redValue = Color.red(pixel);
-        return redValue;
-        //int blueValue = Color.blue(pixel);
-        //int greenValue = Color.green(pixel);
+    HashMap<String,Integer> hexmap = new HashMap<>();
+
+
+    int[] findPixels(Bitmap bitmap) {
+
+
+        for (int x = 0; x <= bitmap.getWidth() - 1; x++) {
+            for (int y = 0; y <= bitmap.getHeight() - 1; y++) {
+                int pixel = bitmap.getPixel(x,y);
+                String hexcode = String.format(String.format("#%02x%02x%02x",pixel));
+                if (hexmap.containsKey(hexcode)){
+                    //Add to Value
+
+                }
+                else{
+                    //Add to map
+                }
+            }
+        }
+
+
+        int[] colorvalues = new int[9];
+
+        return colorvalues;
 
     }
 
