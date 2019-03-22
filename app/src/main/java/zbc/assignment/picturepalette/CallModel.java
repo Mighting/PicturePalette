@@ -32,7 +32,7 @@ public class CallModel {
 
     }
 
-    public int[] getPixelColor(){
+    public Integer[] getPixelColor(){
 
 
 
