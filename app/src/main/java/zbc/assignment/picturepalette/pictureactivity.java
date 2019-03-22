@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.HashMap;
+
 public class pictureactivity extends AppCompatActivity implements CallModel.View {
 
     ImageView imageView;
@@ -34,17 +36,29 @@ public class pictureactivity extends AppCompatActivity implements CallModel.View
         bmp = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
         imageView.setImageBitmap(bmp);
 
-        int first = callModel.getPixelColor()[callModel.getPixelColor().length - 1];
-        int second = callModel.getPixelColor()[callModel.getPixelColor().length - 2];
-        int third = callModel.getPixelColor()[callModel.getPixelColor().length - 3];
-        int fourth = callModel.getPixelColor()[callModel.getPixelColor().length - 4];
-        int fifth = callModel.getPixelColor()[callModel.getPixelColor().length - 5];
+        HashMap<String, Integer> hexmap = callModel.getPixelColor();
+        String[] hexcodes = hexmap.keySet().toArray(new String[5]);
 
-        firstMostColourTextView.setText(Integer.toString(first));
-        secondMostColourTextView.setText(Integer.toString(second));
-        thirdMostColourTextView.setText(Integer.toString(third));
-        fourthMostColourTextView.setText(Integer.toString(fourth));
-        fifthMostColourTextView.setText(Integer.toString(fifth));
+        firstMostColourTextView.setText(Integer.toString(hexmap.get(hexcodes[0])));
+        secondMostColourTextView.setText(Integer.toString(hexmap.get(hexcodes[1])));
+        thirdMostColourTextView.setText(Integer.toString(hexmap.get(hexcodes[2])));
+        fourthMostColourTextView.setText(Integer.toString(hexmap.get(hexcodes[3])));
+        fifthMostColourTextView.setText(Integer.toString(hexmap.get(hexcodes[4])));
+
+
+
+        //FInd a new way to set those things
+        //int first = callModel.getPixelColor()[callModel.getPixelColor().length - 1];
+        //int second = callModel.getPixelColor()[callModel.getPixelColor().length - 2];
+        //int third = callModel.getPixelColor()[callModel.getPixelColor().length - 3];
+        //int fourth = callModel.getPixelColor()[callModel.getPixelColor().length - 4];
+        //int fifth = callModel.getPixelColor()[callModel.getPixelColor().length - 5];
+
+        //firstMostColourTextView.setText(Integer.toString(first));
+        //secondMostColourTextView.setText(Integer.toString(second));
+        //thirdMostColourTextView.setText(Integer.toString(third));
+        //fourthMostColourTextView.setText(Integer.toString(fourth));
+        //fifthMostColourTextView.setText(Integer.toString(fifth));
     }
 
 

@@ -2,6 +2,8 @@ package zbc.assignment.picturepalette;
 
 import android.graphics.Bitmap;
 
+import java.util.HashMap;
+
 public class CallModel {
 
     public interface View {
@@ -32,9 +34,7 @@ public class CallModel {
 
     }
 
-    public Integer[] getPixelColor(){
-
-
+    public HashMap<String, Integer> getPixelColor(){
 
         return findPixels.findPixels(getBitmapOut());
     }
