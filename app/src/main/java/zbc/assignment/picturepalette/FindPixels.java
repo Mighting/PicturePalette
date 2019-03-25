@@ -36,6 +36,7 @@ public class FindPixels {
             }
         }
 
+
         hexmap = (HashMap<String, Integer>) sortByValue(hexmap);
 
 
@@ -52,6 +53,12 @@ public class FindPixels {
 
         Map<K, V> result = new LinkedHashMap<>();
         for (int i = list.size()-1; i > list.size() - 6; i --) {
+            if(result.containsKey("#ffffff")){
+                result.remove(list.get(i));
+            }
+            else if(result.containsKey("#000000")){
+                result.remove(list.get(i));
+            }
             result.put(list.get(i).getKey(), list.get(i).getValue());
         }
 

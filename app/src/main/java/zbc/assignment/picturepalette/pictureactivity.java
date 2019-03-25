@@ -2,8 +2,10 @@ package zbc.assignment.picturepalette;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,6 +21,11 @@ public class pictureactivity extends AppCompatActivity implements CallModel.View
     TextView thirdMostColourTextView;
     TextView fourthMostColourTextView;
     TextView fifthMostColourTextView;
+    Button button1;
+    Button button2;
+    Button button3;
+    Button button4;
+    Button button5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +37,17 @@ public class pictureactivity extends AppCompatActivity implements CallModel.View
         thirdMostColourTextView = findViewById(R.id.ThirdMostColour);
         fourthMostColourTextView = findViewById(R.id.FourthMostColour);
         fifthMostColourTextView = findViewById(R.id.FifthMostColour);
+        button1 = findViewById(R.id.ColourShower1);
+        button2 = findViewById(R.id.ColourShower2);
+        button3 = findViewById(R.id.ColourShower3);
+        button4 = findViewById(R.id.ColourShower4);
+        button5 = findViewById(R.id.ColourShower5);
+        button1.setEnabled(false);
+        button2.setEnabled(false);
+        button3.setEnabled(false);
+        button4.setEnabled(false);
+        button5.setEnabled(false);
+
         callModel = new CallModel(this);
 
         byte[] byteArray = getIntent().getByteArrayExtra("image");
@@ -45,20 +63,11 @@ public class pictureactivity extends AppCompatActivity implements CallModel.View
         fourthMostColourTextView.setText(Integer.toString(hexmap.get(hexcodes[3])));
         fifthMostColourTextView.setText(Integer.toString(hexmap.get(hexcodes[4])));
 
-
-
-        //FInd a new way to set those things
-        //int first = callModel.getPixelColor()[callModel.getPixelColor().length - 1];
-        //int second = callModel.getPixelColor()[callModel.getPixelColor().length - 2];
-        //int third = callModel.getPixelColor()[callModel.getPixelColor().length - 3];
-        //int fourth = callModel.getPixelColor()[callModel.getPixelColor().length - 4];
-        //int fifth = callModel.getPixelColor()[callModel.getPixelColor().length - 5];
-
-        //firstMostColourTextView.setText(Integer.toString(first));
-        //secondMostColourTextView.setText(Integer.toString(second));
-        //thirdMostColourTextView.setText(Integer.toString(third));
-        //fourthMostColourTextView.setText(Integer.toString(fourth));
-        //fifthMostColourTextView.setText(Integer.toString(fifth));
+        button1.setBackgroundColor(Color.parseColor(hexcodes[0]));
+        button2.setBackgroundColor(Color.parseColor(hexcodes[1]));
+        button3.setBackgroundColor(Color.parseColor(hexcodes[2]));
+        button4.setBackgroundColor(Color.parseColor(hexcodes[3]));
+        button5.setBackgroundColor(Color.parseColor(hexcodes[4]));
     }
 
 

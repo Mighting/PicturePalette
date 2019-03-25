@@ -88,4 +88,49 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/FourthMostColour" />
+
+    <Button
+        android:id="@+id/ColourShower1"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="108dp"
+        app:layout_constraintStart_toEndOf="@+id/FirstMostColour"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/ColourShower2"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="9dp"
+        app:layout_constraintStart_toEndOf="@+id/SecondMostColour"
+        app:layout_constraintTop_toBottomOf="@+id/ColourShower1" />
+
+    <Button
+        android:id="@+id/ColourShower3"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="11dp"
+        app:layout_constraintStart_toEndOf="@+id/ThirdMostColour"
+        app:layout_constraintTop_toBottomOf="@+id/ColourShower2" />
+
+    <Button
+        android:id="@+id/ColourShower4"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@+id/FourthMostColour"
+        app:layout_constraintTop_toBottomOf="@+id/ColourShower3" />
+
+    <Button
+        android:id="@+id/ColourShower5"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/FifthMostColour"
+        app:layout_constraintTop_toBottomOf="@+id/ColourShower4" />
 </android.support.constraint.ConstraintLayout>
